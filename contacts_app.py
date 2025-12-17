@@ -13,8 +13,8 @@ from st_aggrid.grid_options_builder import GridOptionsBuilder
 # Config
 st.set_page_config(page_title="My Contacts Lookup", layout="wide")
 st.title("Quick Contacts Manager")
-FILE_PATH = 'C:/Users/JKawah/OneDrive/Documents/aa LRA work/aa LRA My Projects/AI and automation support/contacts.csv'  # UPDATE THIS TO YOUR CSV PATH (or .xlsx)
-
+#FILE_PATH = 'C:/Users/JKawah/OneDrive/Documents/aa LRA work/aa LRA My Projects/AI and automation support/contacts.csv'  # UPDATE THIS TO YOUR CSV PATH (or .xlsx)
+FILE_PATH = 'contacts.csv'  # UPDATE THIS TO YOUR CSV PATH (or .xlsx)
 # Load data
 def load_data():
     try:
@@ -78,4 +78,5 @@ if response['selected_rows']:
         df = df.drop(sel_row.index)
         df.to_csv(FILE_PATH, index=False) if FILE_PATH.endswith('.csv') else df.to_excel(FILE_PATH, index=False)
         st.success("Deleted!")
+
         st.experimental_rerun()
